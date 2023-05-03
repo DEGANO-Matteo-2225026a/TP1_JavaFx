@@ -7,4 +7,5 @@ module com.example.javafxdemo.tp1_javafx {
 
     opens com.example.javafxdemo.tp1_javafx to javafx.fxml;
     exports com.example.javafxdemo.tp1_javafx;
+    exports com.example.td1;
 }
