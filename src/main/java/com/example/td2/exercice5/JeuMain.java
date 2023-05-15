@@ -2,6 +2,7 @@ package com.example.td2.exercice5;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -16,6 +17,7 @@ public class JeuMain extends Application {
     public void start(Stage primaryStage) {
 
         root = new BorderPane();
+
 
         //Acteurs du jeu
         Personnage pacman = new Pacman();
@@ -48,7 +50,9 @@ public class JeuMain extends Application {
      * @param j2
      */
     private void deplacer(Personnage j1, Personnage j2) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         scene.setOnKeyPressed((KeyEvent event) -> {
+
             switch (event.getCode()) {
                 case LEFT:
                     j1.deplacerAGauche();
@@ -76,8 +80,11 @@ public class JeuMain extends Application {
                     j2.deplacerEnBas(scene.getHeight());
                     break;
             }
-            if (j1.estEnCollision(j2))
+            if (j1.estEnCollision(j2)) {
                 System.out.println("Collision....");
+                alert.showAndWait();
+
+            }
         });
     }
 

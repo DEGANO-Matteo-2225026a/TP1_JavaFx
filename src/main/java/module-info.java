@@ -10,4 +10,5 @@ module com.example.javafxdemo.tp1_javafx {
     exports com.example.td1;
     exports com.example.td2;
     exports com.example.td2.exercice5;
+    exports com.example.td2.exercice4;
 }
